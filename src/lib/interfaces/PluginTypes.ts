@@ -6,3 +6,4 @@ export type PluginTypes =
   | 'fs'
   | 'workflow'
   | 'auth'
+  | 'geocode'
