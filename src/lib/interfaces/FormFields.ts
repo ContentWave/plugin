@@ -1,4 +1,5 @@
 import { I18nString } from './I18nString'
+import { ISOCountry } from './ISOCountry'
 import { JSONSchema7 } from './JsonSchema'
 
 interface FormSelectOption {
@@ -12,10 +13,12 @@ interface BaseFormField {
     | 'boolean'
     | 'date'
     | 'datetime'
+    | 'time'
+    | 'duration'
     | 'email'
     | 'file'
-    | 'hour'
     | 'image'
+    | 'integer'
     | 'number'
     | 'phone'
     | 'radio'
@@ -24,6 +27,10 @@ interface BaseFormField {
     | 'form'
     | 'array'
     | 'select'
+    | 'postaladdress'
+    | 'user'
+    | 'ref'
+    | 'html'
   required?: boolean
   default?: any
   validation?: JSONSchema7
@@ -34,20 +41,29 @@ interface GenericFormField extends BaseFormField {
     | 'boolean'
     | 'date'
     | 'datetime'
+    | 'time'
+    | 'duration'
     | 'email'
     | 'file'
-    | 'hour'
     | 'image'
+    | 'integer'
     | 'number'
     | 'phone'
-    | 'radio'
     | 'text'
     | 'textarea'
+    | 'postaladdress'
+    | 'user'
+    | 'html'
 }
 
 interface SelectFormField extends BaseFormField {
-  type: 'select'
+  type: 'select' | 'radio'
   options: FormSelectOption[]
+}
+
+interface PhoneFormField extends BaseFormField {
+  type: 'phone'
+  defaultCountry: ISOCountry
 }
 
 interface FormOrArrayFormField extends BaseFormField {
@@ -55,6 +71,16 @@ interface FormOrArrayFormField extends BaseFormField {
   items: FormFields
 }
 
-type FormField = GenericFormField | SelectFormField | FormOrArrayFormField
+interface RefFormField extends BaseFormField {
+  type: 'ref'
+  model: string
+}
+
+type FormField =
+  | GenericFormField
+  | SelectFormField
+  | FormOrArrayFormField
+  | PhoneFormField
+  | RefFormField
 
 export type FormFields = { [key: string]: FormField }
