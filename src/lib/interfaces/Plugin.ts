@@ -1,4 +1,3 @@
-import { Swarm } from '@swarmjs/core'
 import { PluginTypes } from './PluginTypes'
 import { FormFields } from './FormFields'
 import { I18nString } from './I18nString'
@@ -11,6 +10,6 @@ export interface Plugin {
   getVersion(): string
   getMinVersionSupported(): string | null
   getMaxVersionSupported(): string | null
-  setup(instance: Swarm, conf: object): Promise<void>
+  setup(conf: object): Promise<void>
   getPluginConfig(): FormFields
 }
