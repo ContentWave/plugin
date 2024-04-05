@@ -8,8 +8,7 @@ export interface Plugin {
   getLogo(): string
   getType(): PluginTypes | PluginTypes[]
   getVersion(): string
-  getMinVersionSupported(): string | null
-  getMaxVersionSupported(): string | null
+  getVersionRequirements(): string | null
   setup(conf: object): Promise<void>
   getPluginConfig(): FormFields
 }
