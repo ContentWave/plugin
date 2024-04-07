@@ -10,3 +10,4 @@ export type PluginTypes =
   | 'auth'
   | 'geocode'
   | 'i18n'
+  | 'cache'
