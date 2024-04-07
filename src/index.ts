@@ -11,5 +11,5 @@ export * from './lib/interfaces/PushPlugin'
 export * from './lib/interfaces/SmsPlugin'
 export * from './lib/interfaces/WorkflowPlugin'
 
-export * from './lib/interfaces/PluginTypes'
+export * from './lib/interfaces/PluginType'
 export * from './lib/interfaces/I18nString'

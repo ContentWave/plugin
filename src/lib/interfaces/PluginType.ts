@@ -1,4 +1,4 @@
-export type PluginTypes =
+export type PluginType =
   | 'email'
   | 'sms'
   | 'push'
