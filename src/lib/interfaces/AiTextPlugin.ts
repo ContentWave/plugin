@@ -10,6 +10,6 @@ export interface AiReturn {
   message: string | object
 }
 
-export interface AiPlugin extends Plugin {
+export interface AiTextPlugin extends Plugin {
   createChatCompletion(messages: AiMessage[], json?: boolean): Promise<AiReturn>
 }
