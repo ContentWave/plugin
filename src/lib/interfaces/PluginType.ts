@@ -11,3 +11,4 @@ export type PluginType =
   | 'geocode'
   | 'i18n'
   | 'cache'
+  | 'payments'
