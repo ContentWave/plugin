@@ -10,6 +10,9 @@ export interface AiReturn {
   message: string | object
 }
 
+export type Vector = number[]
+
 export interface AiTextPlugin extends Plugin {
   createChatCompletion(messages: AiMessage[], json?: boolean): Promise<AiReturn>
+  vectorizeText(text: string): Promise<Vector>
 }
