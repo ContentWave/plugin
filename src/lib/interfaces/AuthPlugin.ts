@@ -6,6 +6,7 @@ export interface SsoUserData {
   avatar?: string
   firstname: string
   lastname: string
+  state: string
 }
 
 export interface AuthButtonStyle {
@@ -18,6 +19,6 @@ export interface AuthButtonStyle {
 export interface AuthPlugin extends Plugin {
   getAuthType(): 'oauth2'
   getButtonStyle(): AuthButtonStyle
-  getRedirectUri(redirectUri: string): string
+  getRedirectUri(redirectUri: string, state: string): string
   processCallback(code: string): Promise<SsoUserData>
 }
