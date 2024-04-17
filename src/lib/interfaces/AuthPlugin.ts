@@ -6,7 +6,6 @@ export interface SsoUserData {
   avatar?: string
   firstname: string
   lastname: string
-  state: string
 }
 
 export interface AuthButtonStyle {
