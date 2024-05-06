@@ -19,5 +19,5 @@ export interface AuthPlugin extends Plugin {
   getAuthType(): 'oauth2'
   getButtonStyle(): AuthButtonStyle
   getRedirectUri(redirectUri: string, state: string): string
-  processCallback(code: string): Promise<SsoUserData>
+  processCallback(redirectUri: string, code: string): Promise<SsoUserData>
 }
