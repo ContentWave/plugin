@@ -14,3 +14,4 @@ export * from './lib/interfaces/WorkflowPlugin'
 
 export * from './lib/interfaces/PluginType'
 export * from './lib/interfaces/I18nString'
+export * from './lib/interfaces/OrmConf'

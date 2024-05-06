@@ -1,6 +1,6 @@
 import { PluginType } from './PluginType'
-import { FormFields } from './FormFields'
 import { I18nString } from './I18nString'
+import { IOrmConf } from './OrmConf'
 
 export interface Plugin {
   getName(): I18nString
@@ -10,5 +10,5 @@ export interface Plugin {
   getVersion(): string
   getVersionRequirements(): string | null
   setup(conf: object): Promise<void>
-  getPluginConfig(): FormFields
+  getPluginConfig(): IOrmConf
 }
